@@ -1,30 +1,28 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class Division {
-   public static void main(String[] args) {
-       Scanner sc = new Scanner(System.in);
-       
-       System.out.println("Enter the dividend (num1): ");
-       double num1 = sc.nextDouble();
-       
+class Division {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the dividend (num1): ");
+        int num1 = sc.nextInt();
+
+
        System.out.println("Enter the divisor (num2): ");
-       double num2 = sc.nextDouble();
+       int num2 = sc.nextInt();
+
+
+
        
-       double Q = num2 != 0 ? num1 / num2 : Double.NaN;
-       double R = num2 != 0 ? num1 % num2 : Double.NaN;
-
-       if (!Double.isNaN(R)) {
-           System.out.printf("The remainder for the dividend %.2f and the divisor %.2f is %.2f%n", num1, num2, R);
-       } else {
-           System.out.println("Zero division error occurred!!");
+       if(num2==0){
+           System.out.println("Zero Division Error");
        }
+       
+       int r = num1 % num2;
+       double q = num1 / num2;
+       
+       System.out.printf("The Quotient is %.2f and Reminder is %d of two number %d and %d",q,r,num1,num2);
 
-       if (!Double.isNaN(Q)) {
-           System.out.printf("The quotient for the dividend %.2f and the divisor %.2f is %.2f%n", num1, num2, Q);
-       } else {
-           System.out.println("Zero division error occurred!!");
-       }
-
-       sc.close();
-   }
+        
+    }
 }
